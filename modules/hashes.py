@@ -40,7 +40,7 @@ def calculate_sha256(filename):
     blksize = 1024 * 1024
 
     with open(filename, "rb") as f:
-        for chunk in iter(lambda: f.read(blksize), b""):
+        for chunk in iter(lambda: f.read(blksize), "b"):
             hash_sha256.update(chunk)
 
     return hash_sha256.hexdigest()
